@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">News</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="find_sources">Find Sources</string>
+    <string name="find_articles">Find Articles</string>
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/categoryListFragment">
+
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com.example.news.feature_news.presentation.activity_main.fragments.CategoryListFragment"
+        android:label="fragment_category_list"
+        tools:layout="@layout/fragment_category_list">
+        <action
+            android:id="@+id/action_categoryListFragment_to_sourceListFragment"
+            app:destination="@id/sourceListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sourceListFragment"
+        android:name="com.example.news.feature_news.presentation.activity_main.fragments.SourceListFragment"
+        android:label="fragment_source_list"
+        tools:layout="@layout/fragment_source_list">
+
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_sourceListFragment_to_articleListFragment"
+            app:destination="@id/articleListFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/articleListFragment"
+        android:name="com.example.news.feature_news.presentation.activity_main.fragments.ArticleListFragment"
+        android:label="fragment_article_list"
+        tools:layout="@layout/fragment_article_list">
+
+        <argument
+            android:name="sourceId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_articleListFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.example.news.feature_news.presentation.activity_main.fragments.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view">
+
+        <argument
+            android:name="url"
+            app:argType="string" />
+
+    </fragment>
+</navigation>
